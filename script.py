@@ -38,21 +38,25 @@ def add_in():
         list1.insert(END,row)
 
 def select(event):
-    global tup
-    index=list1.curselection()[0]
-    tup=list1.get(index)
-    name_entry.delete(0,END)
-    name_entry.insert(END,tup[1])
-    about_entry.delete(0,END)
-    about_entry.insert(END,tup[2])
-    place_entry.delete(0,END)
-    place_entry.insert(END,tup[3])
-    phone_entry.delete(0,END)
-    phone_entry.insert(END,tup[4])
-    date_entry.delete(0,END)
-    date_entry.insert(END,tup[5])
-    time_entry.delete(0,END)
-    time_entry.insert(END,tup[6])
+    try:
+        global tup
+        index=list1.curselection()[0]
+        tup=list1.get(index)
+        name_entry.delete(0,END)
+        name_entry.insert(END,tup[1])
+        about_entry.delete(0,END)
+        about_entry.insert(END,tup[2])
+        place_entry.delete(0,END)
+        place_entry.insert(END,tup[3])
+        phone_entry.delete(0,END)
+        phone_entry.insert(END,tup[4])
+        date_entry.delete(0,END)
+        date_entry.insert(END,tup[5])
+        time_entry.delete(0,END)
+        time_entry.insert(END,tup[6])
+    except IndexError:
+        pass
+
     
 def delete_in():
 
